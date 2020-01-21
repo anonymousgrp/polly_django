@@ -88,17 +88,27 @@ WSGI_APPLICATION = 'demo_poll_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'polls_project',
+#         'USER': 'postgres',
+#         'PASSWORD': 'admin',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'polls_project',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
+        'NAME': 'dftbgmancib4e2',
+        'USER': 'expqtitvigdwvd',
+        'PASSWORD': '8f2a39df2292844eccac3c826109453dbe4b8ce93df63414fb8a0b4dc7dd5e05',
+        'HOST': 'ec2-34-193-42-173.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
