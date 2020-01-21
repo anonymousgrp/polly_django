@@ -27,9 +27,7 @@ SECRET_KEY = '-6s)dhayy0r4d+47grn61#ty!j1xdl-ree%zut9z&x33epz()a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-DEBUG = False
-
-ALLOWED_HOSTS = ['cfehome.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -90,32 +88,16 @@ WSGI_APPLICATION = 'demo_poll_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'polls_project',
-#         'USER': 'postgres',
-#         'PASSWORD': 'admin',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dftbgmancib4e2',
-        'USER': 'expqtitvigdwvd',
-        'PASSWORD': '8f2a39df2292844eccac3c826109453dbe4b8ce93df63414fb8a0b4dc7dd5e05',
-        'HOST': 'ec2-34-193-42-173.compute-1.amazonaws.com',
+        'NAME': 'polls_project',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
         'PORT': '5432'
     }
 }
-
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
