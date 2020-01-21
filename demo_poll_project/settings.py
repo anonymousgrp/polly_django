@@ -27,7 +27,9 @@ SECRET_KEY = '-6s)dhayy0r4d+47grn61#ty!j1xdl-ree%zut9z&x33epz()a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+DEBUG = False
+
+ALLOWED_HOSTS = ['cfehome.herokuapp.com']
 
 
 # Application definition
@@ -110,6 +112,11 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -141,4 +148,5 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
 
