@@ -21,7 +21,11 @@
         <nav class='nav'>
             <ul class='nav__list'>
                 <li class='nav__item waves-effect'> Add Question </li>
-                <li id='loginBtn' class='nav__item waves-effect'> Login </li>
+                {% if user.is_authenticated %}
+                    <li id='logoutBtn' class='nav__item waves-effect'> Logout </li>
+                {% else %}
+                    <li id='loginBtn' class='nav__item waves-effect'> Login </li>
+                {% endif %}
             </ul>
         </nav>
     </header>
