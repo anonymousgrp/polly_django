@@ -1,35 +1,16 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Polly</title>
-
-    <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1 align='center' class='logo'><a href='/'> Polly <a/></h1>
-    <hr>
-
-    <div class='questions'>
-
-        <p class='question_heading'>Recent questions</p>
-        <ol>
-            {% for question in questions %}
-                <li class='questions__item'>
-                    <h2 class='question__title'> <a href='{% url "detail" question.id %}'> {{ question.question_text }} ? </a></h2>
-                    <p class='question__date'>Published at {{ question.pub_date }}</p>
-                </li>
-            {% endfor %}
-        <ol>
-    </div>
-
-    <footer class='footer'>
-        <em>© Copyright Anikesh 2019 </em>
-    </footer>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<div class='questions'>
+    <h5 class='question_heading'>Recent questions</h5>
+    <ol>
+        {% for question in questions %}
+        <a href='{% url "detail" question.id %}'>
+            <li class='questions__item waves-effect'>
+                <h3 class='question__title'> <span>{{forloop.counter}}. </span>  {{ question.question_text }} ?</h3>
+                <p class='question__date'>Published at {{ question.pub_date }}</p>
+            </li>
+        </a>
+        {% endfor %}
+    <ol>
+</div>
+{% endblock %}

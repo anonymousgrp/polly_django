@@ -1,30 +1,13 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Polly - Result</title>
-
-    <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1 align='center' class='logo'><a href='/'> Polly <a/></h1>
-    <hr>
-    
-    <div class='questions'>
-        <h1 class='question__title'>{{ question.question_text }}</h1>
-        <ul>
-            {% for choice in question.choice_set.all %}
-                <li class='question__choice'>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-            {% endfor %}
-        </ul>
-        <br>
-        <a class='inline_button' href="{% url 'detail' question.id %}">Vote again</a>
-    </div>
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<div class='questions'>
+    <h1 class='question__title'>{{ question.question_text }}</h1>
+    <ul>
+        {% for choice in question.choice_set.all %}
+            <li class='question__choice'>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a class='inline_button' href="{% url 'detail' question.id %}">Vote again</a>
+</div>
+{% endblock %}

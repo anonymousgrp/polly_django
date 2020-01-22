@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> {% block title %} Polly - Polls Everywhere {% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href='{% static "css/materialize.min.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
+            
+</head>
+<body>
+    
+    <header>
+        <h1 class='logo'><a href='/'> <span> Polly </span> - polls everywhere <a/></h1>
+
+        <nav class='nav'>
+            <ul class='nav__list'>
+                <li class='nav__item waves-effect'> Add Question </li>
+                <li id='loginBtn' class='nav__item waves-effect'> Login </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+            {% block content %}{% endblock %}
+    </div>
+
+    <footer class='footer'>
+        <em>© Copyright Anikesh 2019 </em>
+    </footer>
+
+    <script src='{% static "script/materialize.min.js" %}'></script>
+    <script src='{% static "script/tab.js" %}'></script>
+    <script src='{% static "script/script.js" %}'></script>
+</body>
+</html>
+
